@@ -5,7 +5,7 @@ from ultralytics import YOLO
 # -----------------------------------------
 # 1. モデルの読み込み
 # -----------------------------------------
-model = YOLO("/home/onishi/venv/karura_detection/runs/detect/train2/weights/best.pt")
+model = YOLO("/home/onishi/venv/karura_detection/runs/detect/train3/weights/best.pt")
 model.to('cuda')  # GPUがある場合にGPU上で動作させる
 
 # -----------------------------------------
@@ -25,7 +25,7 @@ while True:
     # 3. 推論 (物体検出)
     # -----------------------------------------
     # フレームをモデルに渡して推論
-    results = model(frame, conf=0.6)
+    results = model(frame, conf=0.5)
 
     # 1画像に対しての結果はリストの0番目に格納される
     res = results[0]
